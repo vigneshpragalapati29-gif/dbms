@@ -1,0 +1,17 @@
+CREATE TABLE Employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    dept_id INT,
+    salary DECIMAL(10,2),
+    FOREIGN KEY (dept_id) REFERENCES Departments(dept_id)
+);
+INSERT INTO Employees (emp_id, name, dept_id, salary) VALUES
+(101, 'Alice', 1, 50000),
+(102, 'Bob', 2, 60000),
+(103, 'Carol', 3, 55000),
+(104, 'David', 2, 62000),
+(105, 'Eve', NULL, 45000);
+Same as INNER JOIN, explicitly using =.
+SELECT e.emp_id, e.name, e.salary, d.dept_name
+FROM Employees e, Departments d
+WHERE e.dept_id = d.dept_id;

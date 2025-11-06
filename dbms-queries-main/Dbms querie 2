@@ -1,0 +1,28 @@
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary DECIMAL(10, 2)
+);
+4. Insert 10 Records into the Table
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary) VALUES
+(1, 'Alice', 'Johnson', 'HR', 55000.00),
+(2, 'Bob', 'Smith', 'Finance', 65000.00),
+(3, 'Charlie', 'Lee', 'IT', 70000.00),
+(4, 'David', 'Brown', 'IT', 72000.00),
+(5, 'Eve', 'Davis', 'Marketing', 58000.00),
+(6, 'Frank', 'Wilson', 'Finance', 67000.00),
+(7, 'Grace', 'Clark', 'HR', 53000.00),
+(8, 'Hank', 'Adams', 'IT', 75000.00),
+(9, 'Ivy', 'Miller', 'Marketing', 60000.00),
+(10, 'Jack', 'Taylor', 'HR', 54000.00);
+SELECT * FROM Employees;
+SELECT * FROM Employees WHERE Department = 'IT';
+SELECT FirstName, LastName, Salary FROM Employees WHERE Salary > 60000;
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Department, Salary)
+VALUES (11, 'Karen', 'White', 'Sales', 61000.00);
+UPDATE Employees
+SET Salary = Salary * 1.05
+WHERE Department = 'HR';
+DELETE FROM Employees WHERE EmployeeID = 3;

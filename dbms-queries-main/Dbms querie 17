@@ -1,0 +1,16 @@
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    salary DECIMAL(10,2),
+    dept_id INT
+);
+INSERT INTO employees (emp_id, name, salary, dept_id) VALUES
+(1, 'Alice', 60000, 10),
+(2, 'Bob', 45000, 20),
+(3, 'Charlie', 75000, 30),
+(4, 'Diana', 52000, 20),
+(5, 'Eve', 40000, 10);
+CREATE VIEW high_salary_employees AS
+SELECT name, salary
+FROM employees
+WHERE salary > 50000;
